@@ -3,21 +3,21 @@ import { saveAs } from "file-saver";
 import "./SpeechToText.css";
 
 const LANGUAGES = [
-  { code: "en", name: "🇺🇸 Tiếng Anh" },
-  { code: "ja", name: "🇯🇵 Tiếng Nhật" },
-  { code: "ko", name: "🇰🇷 Tiếng Hàn" },
-  { code: "fr", name: "🇫🇷 Tiếng Pháp" },
-  { code: "de", name: "🇩🇪 Tiếng Đức" },
-  { code: "zh-CN", name: "🇨🇳 Tiếng Trung (Giản thể)" },
-  { code: "zh-TW", name: "🇹🇼 Tiếng Trung (Phồn thể)" },
-  { code: "ru", name: "🇷🇺 Tiếng Nga" },
-  { code: "es", name: "🇪🇸 Tiếng Tây Ban Nha" },
-  { code: "it", name: "🇮🇹 Tiếng Ý" },
-  { code: "th", name: "🇹🇭 Tiếng Thái" },
-  { code: "id", name: "🇮🇩 Tiếng Indonesia" },
-  { code: "ar", name: "🇸🇦 Tiếng Ả Rập" },
-  { code: "hi", name: "🇮🇳 Tiếng Hindi" },
-];
+  { code: "en", name: " 🇺🇸 English" },
+  { code: "ja", name: " 🇯🇵 Japanese" },
+  { code: "ko", name: " 🇰🇷 Korean" },
+  { code: "fr", name: " 🇫🇷 French" },
+  { code: "de", name: " 🇩🇪 German" },
+  { code: "zh-CN", name: " 🇨🇳 Chinese (Simplified)" },
+  { code: "zh-TW", name: " 🇹🇼 Chinese (Traditional)" },
+  { code: "ru", name: " 🇷🇺 Russian" },
+  { code: "es", name: " 🇪🇸 Spanish" },
+  { code: "it", name: " 🇮🇹 Italian" },
+  { code: "th", name: " 🇹🇭 Thai" },
+  { code: "id", name: " 🇮🇩 Indonesian" },
+  { code: "ar", name: " 🇸🇦 Arabic" },
+  { code: "hi", name: " 🇮🇳 Hindi" },
+  ];
 
 const SpeechToText = () => {
   const [isDeleted, setIsDeleted] = useState(false);
@@ -94,7 +94,7 @@ const SpeechToText = () => {
     if (transcripts && !history.includes(transcripts)) {
       setHistory((prev) => [...prev, transcripts]);
     } else {
-      showToast("⚠️ Bản ghi đã có trong lịch sử!");
+      showToast("⚠️ The record is already in history!");
     }
   };
   
@@ -111,9 +111,9 @@ const SpeechToText = () => {
       );
       const data = await response.json();
       setTranslatedText(data.responseData.translatedText);
-      showToast("✅ Dịch thành công!");
+      showToast("✅ Translated successfully!");
     } catch {
-      showToast("❌ Lỗi khi dịch!");
+      showToast("❌ Error when translating! ");
     }
   };
 
@@ -122,7 +122,7 @@ const SpeechToText = () => {
     const utf8Content = "\ufeff" + content;
     const blob = new Blob([utf8Content], { type: "text/plain;charset=utf-8" });
     saveAs(blob, `transcript_${langCode}.docx`);
-    showToast("📥 Tải xuống thành công!");
+    showToast("📥 Download successfully! ");
   };
 
   const clearTranscripts = () => {
