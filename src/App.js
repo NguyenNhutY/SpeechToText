@@ -3,21 +3,21 @@ import { saveAs } from "file-saver";
 import "./SpeechToText.css";
 
 const LANGUAGES = [
-  { code: "en", name: " 🇺🇸 English" },
-  { code: "ja", name: " 🇯🇵 Japanese" },
-  { code: "ko", name: " 🇰🇷 Korean" },
-  { code: "fr", name: " 🇫🇷 French" },
-  { code: "de", name: " 🇩🇪 German" },
-  { code: "zh-CN", name: " 🇨🇳 Chinese (Simplified)" },
-  { code: "zh-TW", name: " 🇹🇼 Chinese (Traditional)" },
-  { code: "ru", name: " 🇷🇺 Russian" },
-  { code: "es", name: " 🇪🇸 Spanish" },
-  { code: "it", name: " 🇮🇹 Italian" },
-  { code: "th", name: " 🇹🇭 Thai" },
-  { code: "id", name: " 🇮🇩 Indonesian" },
-  { code: "ar", name: " 🇸🇦 Arabic" },
-  { code: "hi", name: " 🇮🇳 Hindi" },
-  ];
+{ code: "en", name: " 🇺🇸 English" },
+{ code: "ja", name: " 🇯🇵 Japanese" },
+{ code: "ko", name: " 🇰🇷 Korean" },
+{ code: "fr", name: " 🇫🇷 French" },
+{ code: "de", name: " 🇩🇪 German" },
+{ code: "zh-CN", name: " 🇨🇳 Chinese (Simplified)" },
+{ code: "zh-TW", name: " 🇹🇼 Chinese (Traditional)" },
+{ code: "ru", name: " 🇷🇺 Russian" },
+{ code: "es", name: " 🇪🇸 Spanish" },
+{ code: "it", name: " 🇮🇹 Italian" },
+{ code: "th", name: " 🇹🇭 Thai" },
+{ code: "id", name: " 🇮🇩 Indonesian" },
+{ code: "ar", name: " 🇸🇦 Arabic" },
+{ code: "hi", name: " 🇮🇳 Hindi" },
+];
 
 const SpeechToText = () => {
   const [isDeleted, setIsDeleted] = useState(false);
